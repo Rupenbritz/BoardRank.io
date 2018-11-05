@@ -1,0 +1,66 @@
+{
+  "name": "BoardRank.io",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cross-env NODE_ENV=development webpack --progress --config ./webpack.dev.js",
+    "test": "mocha-webpack --webpack-config ./webpack.dev.js --require Scripts/test/setup.js Scripts/test/**/*.spec.js"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ]
+    ],
+    "env": {
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "transform-class-properties",
+          "transform-decorators"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "chart.js": "^2.7.3",
+    "vue": "^2.5.17",
+    "vue-chartjs": "^3.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@vue/test-utils": "^1.0.0-beta.25",
+    "ajv": "^6.5.2",
+    "ajv-keywords": "^3.2.0",
+    "aspnet-webpack": "^3.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-preset-vue-app": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.1",
+    "expect": "^23.6.0",
+    "fetch-mock": "^7.2.2",
+    "file-loader": "^2.0.0",
+    "fs": "^0.0.1-security",
+    "html-loader": "^0.5.5",
+    "jsdom": "^13.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.2.0",
+    "mocha-webpack": "^2.0.0-beta.0",
+    "node-fetch": "^2.2.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "vue-class-component": "^6.3.2",
+    "vue-loader": "^15.2.6",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.16.4",
+    "webpack-command": "^0.4.1",
+    "webpack-dev-middleware": "^3.3.0",
+    "webpack-hot-middleware": "^2.22.3",
+    "webpack-merge": "^4.1.4",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
